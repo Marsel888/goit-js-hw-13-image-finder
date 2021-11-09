@@ -1,30 +1,35 @@
+li{
+    list-style-type: none;
+}
+body{
+    background-image: url(./images/166447-morilka-fizika-nauka-korichnevyj_cvet-drevesina-1920x1080.jpg);
+}
 input{
     margin-top: 50px;
     height: 50px;
     width: 300px;
     margin-left:  150px;
+    font-size: 25px;
 }
 .ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-/* .stats{
+ .stats{
     display: flex;
     justify-content: space-around;
-}
-.stats{
-    position: absolute;
-    background-color: #11283b7d;
+} 
+ .stats{
+  
+    background-color: rgb(230, 230, 250, 0.3);
    
-   
+   bottom: 0;
   
   
 
-}
-.item{
-    position: relative;
-}
-.stats-item{
-    display: flex;
+} 
+
+/* button{
+    opacity: 0;
 } */

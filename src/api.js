@@ -7,7 +7,7 @@ export default class Name {
   
 
   fetch() {
-  console.log(this);
+
     return fetch(
       `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.search}&page=${this.page}&per_page=12&key=${API_KEY}`,
     ).then(r => r.json());
@@ -26,5 +26,10 @@ export default class Name {
    
     this.page = event;
   }
- 
+ startPage(){
+   this.page = 1
+ }
+ curentPage(){
+   this.page += 1
+ }
 }
