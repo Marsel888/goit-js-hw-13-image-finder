@@ -1,0 +1,30 @@
+input{
+    margin-top: 50px;
+    height: 50px;
+    width: 300px;
+    margin-left:  150px;
+}
+.ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* .stats{
+    display: flex;
+    justify-content: space-around;
+}
+.stats{
+    position: absolute;
+    background-color: #11283b7d;
+   
+   
+  
+  
+
+}
+.item{
+    position: relative;
+}
+.stats-item{
+    display: flex;
+} */
