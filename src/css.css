@@ -30,6 +30,13 @@ input{
 
 } 
 
+.images {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+
 /* button{
     opacity: 0;
 } */

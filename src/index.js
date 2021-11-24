@@ -7,7 +7,7 @@ const search = document.querySelector('input');
 const button = document.querySelector('button');
 import Name from './api.js';
 const debounce = require('lodash.debounce');
-
+const senteniel = document.querySelector('.js-senteniel');
 const name = new Name();
 
 search.addEventListener('input', debounce(searchImg, 1000));
@@ -41,6 +41,7 @@ function searchImg(event) {
   numbersPage();
   //  obs();
   render();
+  
 }
 
 function numbersPage() {
@@ -49,29 +50,46 @@ function numbersPage() {
   }
 }
 function render() {
+  observer.unobserve(senteniel)
+
   name.fetch().then(data => {
     ul.insertAdjacentHTML('beforeend', li_image(data.hits));
+    observer.observe(senteniel);
+    
+
   });
+ 
 }
 
-function obs() {
-  let observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(
-      entry => {
-        if (entry.isIntersecting) {
-          render();
 
-          name.curentPage();
+const options = {
+root: null,
+rootMargin: '300px',
+threshold: 1
 
-          console.log('ww');
-        }
-      },
-      { threshold: 1 },
-    );
-  });
 
-  document.querySelectorAll('.test').forEach(p => {
-    observer.observe(p);
-  });
+}
+
+
+const observer = new IntersectionObserver(updateList, options )
+
+function updateList (entries) {
+entries.forEach(entry => {
+  if(entry.isIntersecting){
+    name.curentPage()
+    name.fetch().then(data => {
+      ul.insertAdjacentHTML('beforeend', li_image(data.hits));
+      
+      
+  
+    });
+  }
+
+  
+});
+
+
+
+
 }
 
